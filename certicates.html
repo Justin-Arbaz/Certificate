@@ -1,0 +1,628 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>
+        Certificate of Registration
+    </title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT&amp;family=Roboto+Slab&amp;display=swap"
+        rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Old Standard TT', serif;
+            background-color: #f9fafb;
+        }
+
+        .certificate-container {
+            max-width: 900px;
+            margin: 2rem auto;
+            background-color: white;
+            border: 8px solid #2d2d2d;
+            padding: 1rem 2rem 2rem 2rem;
+            position: relative;
+        }
+
+        /* .certificate-inner-border {
+            border: 4px solid #a3a3a3;
+            padding: 1rem 2rem 2rem 2rem;
+        } */
+
+        .title-arc {
+            font-family: 'Roboto Slab', serif;
+            font-weight: 900;
+            font-size: 2.75rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            line-height: 1;
+            transform-origin: center bottom;
+            margin-bottom: 0.5rem;
+        }
+
+        .arc-container {
+            width: 100%;
+            height: 120px;
+            position: relative;
+            overflow: visible;
+            margin-bottom: 0.5rem;
+        }
+
+        .arc-text {
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            text-align: center;
+            font-weight: 900;
+            font-size: 2.75rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            font-family: 'Roboto Slab', serif;
+            transform: translateY(20px);
+        }
+
+        .arc-text span {
+            display: inline-block;
+            transform-origin: bottom center;
+        }
+
+        .certificate-title {
+            font-family: 'Old Standard TT', serif;
+            font-weight: 700;
+            font-size: 2.25rem;
+            text-align: center;
+            margin-bottom: 0.75rem;
+            letter-spacing: 0.02em;
+        }
+
+        .italic-text {
+            font-style: italic;
+        }
+
+        .signature-box {
+            border: 1px solid black;
+            width: 180px;
+            height: 70px;
+            margin-top: 0.25rem;
+            margin-bottom: 0.25rem;
+            padding: 0.25rem 0.5rem;
+            font-family: 'Roboto Slab', serif;
+            font-style: italic;
+            font-weight: 600;
+            font-size: 0.875rem;
+            line-height: 1.1;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .signature-text {
+            font-style: italic;
+            font-weight: 600;
+            font-size: 0.875rem;
+            margin-top: -0.25rem;
+        }
+
+        .bold-underline {
+            font-weight: 700;
+            text-decoration: underline;
+            letter-spacing: 0.02em;
+        }
+
+        .bold-text {
+            font-weight: 700;
+        }
+
+        .small-text {
+            font-size: 0.875rem;
+        }
+
+        .small-italic {
+            font-size: 0.875rem;
+            font-style: italic;
+        }
+
+        .small-bold-italic {
+            font-size: 0.875rem;
+            font-style: italic;
+            font-weight: 700;
+        }
+
+        .small-bold {
+            font-size: 0.875rem;
+            font-weight: 700;
+        }
+
+        .underline-dotted {
+            border-bottom: 1px dotted black;
+            display: inline-block;
+            min-width: 80px;
+            padding-bottom: 1px;
+            margin-left: 0.25rem;
+            margin-right: 0.25rem;
+        }
+
+        .photo-container {
+            border: 1px solid black;
+            width: 110px;
+            height: 140px;
+            position: absolute;
+            top: 380px;
+            right: 60px;
+            background-color: white;
+        }
+
+        .photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .seal-stamp {
+            position: absolute;
+            top: 230px;
+            right: 40px;
+            width: 110px;
+            height: 140px;
+            border-radius: 50%;
+            border: 1px solid transparent;
+            background: transparent;
+            pointer-events: none;
+            user-select: none;
+            mix-blend-mode: multiply;
+            opacity: 0.3;
+        }
+
+        .footer-text {
+            font-size: 0.75rem;
+            font-family: 'Roboto Slab', serif;
+            text-align: center;
+            margin-top: 1rem;
+            letter-spacing: 0.02em;
+        }
+
+        .footer-bottom {
+            font-size: 0.75rem;
+            font-family: 'Roboto Slab', serif;
+            text-align: center;
+            margin-top: 0.5rem;
+            letter-spacing: 0.02em;
+        }
+
+        .footer-bottom span {
+            font-weight: 700;
+        }
+
+        .footer-flex {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1rem;
+            font-size: 0.875rem;
+            font-family: 'Roboto Slab', serif;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+        }
+
+        .footer-left,
+        .footer-right {
+            width: 33%;
+        }
+
+        .footer-center {
+            width: 33%;
+            text-align: center;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+        }
+
+        .footer-right {
+            text-align: right;
+            font-weight: 700;
+            font-family: 'Roboto Slab', serif;
+            font-style: italic;
+            font-size: 1.25rem;
+            line-height: 1;
+            letter-spacing: 0.02em;
+        }
+
+        .footer-right span {
+            display: block;
+            font-size: 1.25rem;
+            font-weight: 700;
+            font-family: 'Roboto Slab', serif;
+            font-style: normal;
+            letter-spacing: 0.02em;
+        }
+
+        .footer-right .signature {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            font-weight: 400;
+            font-size: 1.5rem;
+            margin-top: -0.5rem;
+            letter-spacing: 0.02em;
+        }
+
+        .top-left,
+        .top-right {
+            font-size: 0.875rem;
+            font-family: 'Roboto Slab', serif;
+            font-style: italic;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+        }
+
+        .top-left {
+            position: absolute;
+            top: 12px;
+            left: 20px;
+        }
+
+        .top-right {
+            position: absolute;
+            top: 12px;
+            right: 20px;
+        }
+
+        .top-right .number {
+            font-weight: 700;
+            font-style: normal;
+            border-bottom: 1px dotted black;
+            padding-left: 0.25rem;
+            padding-right: 0.25rem;
+            letter-spacing: 0.02em;
+        }
+
+        .seal-banner {
+            font-family: 'Roboto Slab', serif;
+            font-weight: 700;
+            font-size: 0.75rem;
+            background-color: black;
+            color: white;
+            padding: 0 0.5rem;
+            position: absolute;
+            /* top: 110px; */
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 0 0 4px 4px;
+            letter-spacing: 0.02em;
+            user-select: none;
+            margin-top: 1px;
+        }
+
+        .seal-logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 0.25rem auto;
+            display: block;
+        }
+
+        .seal-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .seal-text {
+            font-family: 'Roboto Slab', serif;
+            font-weight: 700;
+            font-size: 0.75rem;
+            text-align: center;
+            letter-spacing: 0.02em;
+            margin-bottom: 0.5rem;
+        }
+
+        .certificate-content p {
+            margin-bottom: 0.25rem;
+            line-height: 1.3;
+        }
+
+        .certificate-content .indent {
+            margin-left: 1.5rem;
+        }
+
+        .certificate-content .inline-bold {
+            font-weight: 700;
+        }
+
+        .certificate-content .inline-italic {
+            font-style: italic;
+        }
+
+        .certificate-content .inline-underline-dotted {
+            border-bottom: 1px dotted black;
+            display: inline-block;
+            min-width: 120px;
+            padding-bottom: 1px;
+            margin-left: 0.25rem;
+            margin-right: 0.25rem;
+        }
+
+        @media (max-width: 640px) {
+            .certificate-container {
+                padding: 1rem 1rem 1.5rem 1rem;
+            }
+
+            .photo-container {
+                position: static;
+                width: 100px;
+                height: 130px;
+                margin: 1rem auto 1rem auto;
+            }
+
+            .seal-stamp {
+                display: none;
+            }
+
+            .footer-flex {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .footer-left,
+            .footer-center,
+            .footer-right {
+                width: 100%;
+                text-align: center;
+            }
+
+            .footer-right {
+                font-size: 1.25rem;
+            }
+        }
+
+        /* .G1 {
+            transform: translate(20px, 85px) rotate(-30deg);
+        }
+
+        .e1 {
+            transform: translate(13px, 60px) rotate(-25deg);
+        }
+
+        .e2 {
+            transform: translate(6px, 40px) rotate(-20deg);
+        }
+
+        .k1 {
+            transform: translate(3px, 23px) rotate(-15deg);
+        }
+
+        .s1 {
+            transform: translate(2px, 14px) rotate(-10deg);
+        }
+
+        .f {
+            transform: translate(1px, 8px) rotate(-5deg);
+        }
+
+        .o {
+            transform: translate(0px, 5px) rotate(0deg);
+        }
+
+        .r {
+            transform: translate(-1px, 8px) rotate(5deg);
+        }
+
+        .G2 {
+            transform: translate(-2px, 14px) rotate(10deg);
+        }
+
+        .e3 {
+            transform: translate(-3px, 25px) rotate(15deg);
+        }
+
+        .e4 {
+            transform: translate(-6px, 40px) rotate(20deg);
+        }
+
+        .k2 {
+            transform: translate(-14px, 60px) rotate(25deg);
+        }
+
+        .s2 {
+            transform: translate(-20px, 80px) rotate(30deg);
+        }
+
+        span {
+            display: inline-block;
+        } */
+
+        .certificate-title {
+            font-family: 'Old English Text MT', 'Old London', serif;
+font-size: 38px; /* Approximate */
+font-weight: normal;
+  }
+    </style>
+</head>
+
+<body>
+    <div class="certificate-container">
+        <div class="certificate-inner-border">
+            <div class="top-left italic-text">
+                
+                
+                Registration No.
+                <span class="underline-dotted">
+                    <span class="bold-text">
+                    DBCP / OA / 4255
+                </span>
+                </span>
+            </div>
+            <div class="top-right italic-text">
+                S. No.
+                <span class="number">
+                    014940
+                </span>
+            </div>
+            <!-- <div style="text-align: center; font-weight: bold;
+                font-size: 55px;">
+                <span class="G1">G</span>
+                <span class="e1">e</span>
+                <span class="e2">e</span>
+                <span class="k1">k</span>
+                <span class="s1">s</span>
+                <span class="f">f</span>
+                <span class="o">o</span>
+                <span class="r">r</span>
+                <span class="G2">G</span>
+                <span class="e3">e</span>
+                <span class="e4">e</span>
+                <span class="k2">k</span>
+                <span class="s2">s</span>
+            </div> -->
+
+            <img src="./logo.png" alt="" class="mt-5 pt-5 img-fluid">
+
+            <!-- <div aria-label="Delhi Bharatiya Chikitsa Parishad official seal logo" class="seal-logo">
+                <img alt="Official seal logo of Delhi Bharatiya Chikitsa Parishad with Ashoka emblem and text"
+                    height="80" src="https://storage.googleapis.com/a1aa/image/6ad0ff27-effa-4d92-1213-e72826922ec4.jpg"
+                    width="80" />
+                <div class="seal-banner">
+                    सर्वे मनः निगमयः
+                </div>
+            </div> -->
+            <h2 class="certificate-title mt-5">
+                Certificate of Registration
+            </h2>
+            <p class="italic-text small-text mb-1">
+                This is to certify that the withsigned
+            </p>
+            <div aria-label="Holder's signature box with handwritten signature" class="signature-box">
+                <span class="">sfd</span>
+            </div>
+            <p class="signature-text">
+                Holder's Signature
+            </p>
+            <div aria-label="Photo of certificate holder" class="photo-container ">
+                <img alt="Black and white photo of Babita Yadav, female with long hair, facing front" height="140"
+                    src="https://storage.googleapis.com/a1aa/image/8534f214-f347-4708-dd20-3c9d3c9a1900.jpg"
+                    width="110" />
+            </div>
+            <div class="certificate-content mt-4 text-sm leading-tight">
+                <p>
+                    <span class="italic-text">
+                        Doctor Shri/Shrimati/Kumari
+                    </span>
+                    <span class="bold-underline ml-2">
+                        BABITA YADAV
+                    </span>
+                    <span class="underline-dotted">
+                    </span>
+                </p>
+                <p>
+                    <span class="italic-text">
+                        Son/Daughter of Sh.
+                    </span>
+                    <span class="bold-underline ml-2">
+                        SURAJ PAL SINGH
+                    </span>
+                    <span class="underline-dotted">
+                    </span>
+                </p>
+                <p>
+                    <span class="italic-text">
+                        born on
+                    </span>
+                    <span class="bold-underline ml-2">
+                        28-08-1975
+                    </span>
+                    <span class="underline-dotted">
+                    </span>
+                </p>
+                <p>
+                    <span class="italic-text">
+                        passing the qualification of
+                    </span>
+                    <span class="bold-underline ml-2">
+                        B. A. M. S ( 2000), M. D. (AY.) 2003
+                    </span>
+                    <span class="underline-dotted">
+                    </span>
+                </p>
+                <p>
+                    <span class="italic-text">
+                        from
+                    </span>
+                    <span class="bold-underline ml-2">
+                        A &amp; U, TIBBIA COLLEGE, DELHI
+                    </span>
+                    <span class="italic-text ml-2">
+                        College affiliated to
+                    </span>
+                </p>
+                <p>
+                    <span class="bold-underline">
+                        DELHI UNIVERSITY, DELHI, H. P. UNIVERSITY, SHIMLA
+                    </span>
+                    <span class="italic-text ml-2">
+                        Board/Examining body/
+                    </span>
+                </p>
+                <p class="italic-text">
+                    University has been duly registered under the Delhi Bharatiya Chikitsa Parishad Act, 1998 in part
+                    
+                    <span class="underline-dotted">
+                        <span class="bold-text">
+                        A
+                    </span>
+                    </span>
+                    of the Register.
+                </p>
+                <p class="italic-text indent">
+                    In witness where of are herewith affixed the seal of the Delhi Bharatiya Chikitsa Parishad, Delhi
+                    and the
+                    signature of the Registrar subject to the provisions of the said Act.
+                </p>
+                <p class="italic-text">
+                    
+                    <span class="underline-dotted">
+                        <span class="bold-text">
+                        04-02-2024
+                    </span>
+                    </span>
+                    This certificate is valid upto a period of 5 years, i.e.
+                    <span class="underline-dotted">
+                    </span>
+                </p>
+            </div>
+            <div class="footer-flex mt-8">
+                <div class="footer-left">
+                    <p>
+                        Dated
+                        <span class="underline-dotted">
+                            05-02-2019
+                        </span>
+                        <br />
+                        Place
+                        <span class="underline-dotted">
+                            DELHI
+                        </span>
+                    </p>
+                </div>
+                <div class="footer-center">
+                    <p class="bold-text">
+                        SEAL
+                    </p>
+                </div>
+                <div class="footer-right">
+                    <span class="signature">
+                        Yogita Munjal
+                    </span>
+                    <p>
+                        Registrar
+                    </p>
+                </div>
+            </div>
+            <p class="footer-bottom mt-6">
+                The information regarding change of address is essential, otherwise action shall be taken under
+                provisions of the Rules/Act.
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
